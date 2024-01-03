@@ -1,6 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 from einops import rearrange
+import torch
 
 pipe = pipeline("text-generation", model="HuggingFaceH4/zephyr-7b-beta", torch_dtype=torch.bfloat16, device_map="auto")
 
