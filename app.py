@@ -19,7 +19,7 @@ def main():
                 "content": user_input,
             })
             prompt = pipe.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-            outputs = pipe(prompt, max_new_tokens=1000, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
+            outputs = pipe(prompt, max_new_tokens=200, do_sample=True, temperature=0.7, top_k=50, top_p=0.95)
             chatbot_response = outputs[0]["generated_text"]
             messages.append({
                 "role": "chatbot",
